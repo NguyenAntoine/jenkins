@@ -11,7 +11,7 @@ chown 1000 ./jenkins_home
 ## How to update Jenkins version ?
 
 ````bash
-wget http://updates.jenkins-ci.org/download/war/$(JENKINS_VERSION)/jenkins.war
-mv ./jenkins.war /usr/share/jenkins/jenkins.war
-chown jenkins:jenkins /usr/share/jenkins/jenkins.war
+docker-compose down
+docker-compose pull
+docker-compose up -d
 ```
