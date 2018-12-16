@@ -18,4 +18,3 @@ networks:
   reverse-proxy:
     external:
       name: reverse-proxy
-
