@@ -9,14 +9,11 @@ services:
     networks:
       - default
       - reverse-proxy
-    restart: always
     volumes:
       - ./jenkins_home:/var/jenkins_home
-    environment:
-      - VIRTUAL_PORT=8080
-      - VIRTUAL_HOST=jenkins.nguyenantoine.com
-      - LETSENCRYPT_HOST=jenkins.nguyenantoine.com
-      - LETSENCRYPT_EMAIL=antoine.ngu@outlook.fr
+    env_file:
+      - .env
+    restart: always
 networks:
   reverse-proxy:
     external:
